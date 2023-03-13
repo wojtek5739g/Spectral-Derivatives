@@ -1,3 +1,6 @@
+NOTE:
+wderiv library is provided by Ruszczak Bartosz and Gabriel Wlazłowski from Warsaw University of Technology, Faculty of Physics https://gitlab.fizyka.pw.edu.pl/wtools/wderiv/-/tree/master/
+
 # Spectral-Derivatives
 Module in Python taking code from C to calculate derivatives of various functions with spectral method
 
