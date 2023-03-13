@@ -5,4 +5,5 @@ wderiv library is provided by Ruszczak Bartosz and Gabriel Wlazłowski from Wars
 Module in Python taking code from C to calculate derivatives of various functions with spectral method
 
 # DISCLAIMER
-In order to use this Python library you need to have installed FFTW library. Instructions on this site: http://www.fftw.org/fftw3_doc/Installation-and-Customization.html
+In order to use this Python library you need to have installed FFTW library. Instructions on this site: https://packages.msys2.org/package/mingw-w64-x86_64-fftw
+It is highly recommended to install minGW tools from https://www.msys2.org/
