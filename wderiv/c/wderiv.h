@@ -2,14 +2,14 @@
  * W-SLDA Toolkit
  * Warsaw University of Technology, Faculty of Physics (2021)
  * https://wslda.fizyka.pw.edu.pl/
- * 
- * This library provides set of functions for computation derivatives using sepectral methods. 
+ *
+ * This library provides set of functions for computation derivatives using sepectral methods.
  * The lib depends on FFTW library.
- * The library is compatible with W-SLDA Toolkit however, it can be used as standalone lib. 
+ * The library is compatible with W-SLDA Toolkit however, it can be used as standalone lib.
  * It is written in C99 standard.
- * 
+ *
  * For more information see: https://gitlab.fizyka.pw.edu.pl/gabrielw/wslda/-/wikis/wderiv-library
- * */ 
+ * */
 
 
 #ifndef __W_DERIV_LIB__
@@ -75,12 +75,12 @@ int wderiv_clean();
 
 /**
  * Function computes n-th derivative with respect to direction
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param direction WDERIV_DX or WDERIV_DY or WDERIV_DZ
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param deriv pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *              NOTE: deriv can be the same pointer as f, then result overwrites input 
+ *              NOTE: deriv can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_derivative_3d_r(int direction, int n, double *f, double *deriv);
@@ -88,100 +88,100 @@ int wderiv_derivative_3d_r(int direction, int n, double *f, double *deriv);
 
 /**
  * Function computes first derivative with respect to x (df/dx)
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dfdx pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dfdx can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdx can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdx_3d_r(double *f, double *dfdx);
 
 /**
  * Function computes first derivative with respect to y (df/dy)
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dfdy pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dfdy can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdy can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdy_3d_r(double *f, double *dfdy);
 
 /**
  * Function computes first derivative with respect to z (df/dz)
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dfdz pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dfdz can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdz can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdz_3d_r(double *f, double *dfdz);
 
 /**
  * Function computes second derivative with respect to x (d^2f/dx^2)
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param d2fdx2 pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdx2_3d_r(double *f, double *d2fdx2);
 
 /**
  * Function computes second derivative with respect to y (d^2f/dy^2)
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dnfdyn pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdy2_3d_r(double *f, double *d2fdy2);
 
 /**
  * Function computes second derivative with respect to z (d^2f/dz^2)
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dnfdzn pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dnfdzn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdzn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdz2_3d_r(double *f, double *d2fdz2);
 
 /**
  * Function computes n-th derivative with respect to x (d^nf/dx^n)
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dnfdxn pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdxn_3d_r(int n, double *f, double *dnfdxn);
 
 /**
  * Function computes n-th derivative with respect to y (d^nf/dy^n)
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dnfdyn pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdyn_3d_r(int n, double *f, double *dnfdyn);
 
 /**
  * Function computes n-th derivative with respect to z (d^nf/dz^n)
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dnfdzn pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dnfdzn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdzn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdzn_3d_r(int n, double *f, double *dnfdzn);
 
 /**
  * Function computes gradient
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dfdx pointer to function, array of size [nx*ny*nz] (OUTPUT)
  * @param dfdy pointer to function, array of size [nx*ny*nz] (OUTPUT)
@@ -201,7 +201,7 @@ int wderiv_gradient2_3d_r(double *f, double *gradient_square);
 
 /**
  * Function computes laplace = d^2f/dx^2 + d^2f/dy^2 + d^2f/dz^2
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param laplace pointer to function, array of size [nx*ny*nz] (OUTPUT)
  * @return error code
@@ -210,7 +210,7 @@ int wderiv_laplace_3d_r(double *f, double *laplace);
 
 /**
  * Function computes divergence = df/dx + df/dy + df/dz
- * of 3D real function f(x,y,z)   
+ * of 3D real function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param divergence pointer to function, array of size [nx*ny*nz] (OUTPUT)
  * @return error code
@@ -232,81 +232,81 @@ int wderiv_curl_3d_r(double *fx, double *fy, double *fz, double *curl_x, double 
 
 /**
  * Function computes n-th derivative with respect to direction
- * of 2D real function f(x,y)   
+ * of 2D real function f(x,y)
  * @param direction WDERIV_DX or WDERIV_DY
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param deriv pointer to function, array of size [nx*ny] (OUTPUT)
- *              NOTE: deriv can be the same pointer as f, then result overwrites input 
+ *              NOTE: deriv can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_derivative_2d_r(int direction, int n, double *f, double *deriv);
 
 /**
  * Function computes first derivative with respect to x (df/dx)
- * of 2D real function f(x,y)   
+ * of 2D real function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param dfdx pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: dfdx can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdx can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdx_2d_r(double *f, double *dfdx);
 
 /**
  * Function computes first derivative with respect to y (df/dy)
- * of 2D real function f(x,y)   
+ * of 2D real function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param dfdy pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: dfdy can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdy can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdy_2d_r(double *f, double *dfdy);
 
 /**
  * Function computes second derivative with respect to x (d^2f/dx^2)
- * of 2D real function f(x,y)   
+ * of 2D real function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param d2fdx2 pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdx2_2d_r(double *f, double *d2fdx2);
 
 /**
  * Function computes second derivative with respect to y (d^2f/dy^2)
- * of 2D real function f(x,y)   
+ * of 2D real function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param d2fdy2 pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: d2fdy2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdy2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdy2_2d_r(double *f, double *d2fdy2);
 
 /**
  * Function computes n-th derivative with respect to x (d^nf/dx^n)
- * of 2D real function f(x,y)   
+ * of 2D real function f(x,y)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param dnfdxn pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdxn_2d_r(int n, double *f, double *dnfdxn);
 
 /**
  * Function computes n-th derivative with respect to y (d^nf/dy^n)
- * of 2D real function f(x,y)   
+ * of 2D real function f(x,y)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param dnfdyn pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdyn_2d_r(int n, double *f, double *dnfdyn);
 
 /**
  * Function computes gradient
- * of 2D real function f(x,y)   
+ * of 2D real function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param dfdx pointer to function, array of size [nx*ny] (OUTPUT)
  * @param dfdy pointer to function, array of size [nx*ny] (OUTPUT)
@@ -325,7 +325,7 @@ int wderiv_gradient2_2d_r(double *f, double * gradient_square);
 
 /**
  * Function computes laplace = d^2f/dx^2 + d^2f/dy^2
- * of 2D real function f(x,y)   
+ * of 2D real function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param laplace pointer to function, array of size [nx*ny] (OUTPUT)
  * @return error code
@@ -334,7 +334,7 @@ int wderiv_laplace_2d_r(double *f, double *laplace);
 
 /**
  * Function computes divergence = df/dx + df/dy + df/dz
- * of 2D real function f(x,y)   
+ * of 2D real function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param divergence pointer to function, array of size [nx*ny] (OUTPUT)
  * @return error code
@@ -346,45 +346,45 @@ int wderiv_divergence_2d_r(double *f, double *divergence);
  * @param n order of derivative
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param deriv pointer to function, array of size [nx] (OUTPUT)
- *              NOTE: deriv can be the same pointer as f, then result overwrites input 
+ *              NOTE: deriv can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_derivative_1d_r(int n, double *f, double *deriv);
 
 /**
  * Function computes first derivative with respect to x (df/dx)
- * of 1D real function f(x)   
+ * of 1D real function f(x)
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param dfdx pointer to function, array of size [nx] (OUTPUT)
- *                NOTE: dfdx can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdx can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdx_1d_r(double *f, double *dfdx);
 
 /**
  * Function computes second derivative with respect to x (d^2f/dx^2)
- * of 1D real function f(x)   
+ * of 1D real function f(x)
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param d2fdx2 pointer to function, array of size [nx] (OUTPUT)
- *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdx2_1d_r(double *f, double *d2fdx2);
 
 /**
  * Function computes n-th derivative with respect to x (d^nf/dx^n)
- * of 1D real function f(x)   
+ * of 1D real function f(x)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param dnfdxn pointer to function, array of size [nx] (OUTPUT)
- *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdxn_1d_r(int n, double *f, double *dnfdxn);
 
 /**
  * Function computes gradient = dfdx
- * of 1D real function f(x)   
+ * of 1D real function f(x)
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param dfdx pointer to function, array of size [nx] (OUTPUT)
  * @return error code
@@ -402,7 +402,7 @@ int wderiv_gradient2_1d_r(double *f, double * gradient_square);
 
 /**
  * Function computes laplace = d^2f/dx^2
- * of 1D real function f(x)   
+ * of 1D real function f(x)
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param laplace pointer to function, array of size [nx] (OUTPUT)
  * @return error code
@@ -411,7 +411,7 @@ int wderiv_laplace_1d_r(double *f, double *laplace);
 
 /**
  * Function computes divergence = df/dx
- * of 1D complex function f(x)   
+ * of 1D complex function f(x)
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param divergence pointer to function, array of size [nx] (OUTPUT)
  * @return error code
@@ -422,72 +422,72 @@ int wderiv_divergence_1d_r(double *f, double *divergence);
 
 /**
  * Function computes n-th derivative with respect to direction
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param direction WDERIV_DX or WDERIV_DY or WDERIV_DZ
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param deriv pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *              NOTE: deriv can be the same pointer as f, then result overwrites input 
+ *              NOTE: deriv can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_derivative_3d_c(int direction, int n, Complex *f, Complex *deriv);
 
 /**
  * Function computes first derivative with respect to x (df/dx)
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param f pointer to function, array of size [nz*ny*nz] (INPUT)
  * @param dfdx pointer to function, array of size [nz*ny*nz] (OUTPUT)
- *                NOTE: dfdx can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdx can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdx_3d_c(Complex *f, Complex *dfdx);
 
 /**
  * Function computes first derivative with respect to y (df/dy)
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dfdy pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dfdy can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdy can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdy_3d_c(Complex *f, Complex *dfdy);
 
 /**
  * Function computes first derivative with respect to z (df/dz)
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dfdz pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dfdz can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdz can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdz_3d_c(Complex *f, Complex *dfdz);
 
 /**
  * Function computes second derivative with respect to x (d^2f/dx^2)
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param f pointer to function, array of size [nz*ny*nz] (INPUT)
  * @param d2fdx2 pointer to function, array of size [nz*ny*nz] (OUTPUT)
- *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdx2_3d_c(Complex *f, Complex *d2fdx2);
 
 /**
  * Function computes second derivative with respect to y (d^2f/dy^2)
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param d2fdy2 pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: d2fdy2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdy2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdy2_3d_c(Complex *f, Complex *d2fdy2);
 
 /**
  * Function computes second derivative with respect to z (d^2f/dz^2)
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param d2fdz2 pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: d2fdz2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdz2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdz2_3d_c(Complex *f, Complex *d2fdz2);
@@ -495,40 +495,40 @@ int wderiv_d2fdz2_3d_c(Complex *f, Complex *d2fdz2);
 
 /**
  * Function computes n-th derivative with respect to x (d^nf/dx^n)
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param n order of derivative
  * @param f pointer to function, array of size [nz*ny*nz] (INPUT)
  * @param dnfdxn pointer to function, array of size [nz*ny*nz] (OUTPUT)
- *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdxn_3d_c(int n, Complex *f, Complex *dnfdxn);
 
 /**
  * Function computes n-th derivative with respect to y (d^nf/dx^y)
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dnfdyn pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdyn_3d_c(int n, Complex *f, Complex *dnfdyn);
 
 /**
  * Function computes n-th derivative with respect to z (d^nf/dx^z)
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dnfdzn pointer to function, array of size [nx*ny*nz] (OUTPUT)
- *                NOTE: dnfdzn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdzn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdzn_3d_c(int n, Complex *f, Complex *dnfdzn);
 
 /**
  * Function computes gradient
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param dfdx pointer to function, array of size [nx*ny*nz] (OUTPUT)
  * @param dfdy pointer to function, array of size [nx*ny*nz] (OUTPUT)
@@ -548,16 +548,16 @@ int wderiv_gradient2_3d_c(Complex *f, Complex *gradient_square);
 
 /**
  * Function computes laplace = d^2f/dx^2 + d^2f/dy^2 + d^2f/dz^2
- * of 3D complex function f(x,y,z)   
+ * of 3D complex function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param laplace pointer to function, array of size [nx*ny*nz] (OUTPUT)
  * @return error code
- * */ 
+ * */
 int wderiv_laplace_3d_c(Complex *f, Complex *laplace);
 
 /**
  * Function computes divergence = df/dx + df/dy + df/dz
- * of 3D complex function f(x,y,z)  
+ * of 3D complex function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny*nz] (INPUT)
  * @param divergence pointer to function, array of size [nx*ny*nz] (OUTPUT)
  * @return error code
@@ -580,81 +580,81 @@ int wderiv_curl_3d_c(Complex *fx, Complex *fy, Complex *fz, Complex *curl_x, Com
 
 /**
  * Function computes n-th derivative with respect to direction
- * of 2D complex function f(x,y)   
+ * of 2D complex function f(x,y)
  * @param direction WDERIV_DX or WDERIV_DY
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param deriv pointer to function, array of size [nx*ny] (OUTPUT)
- *              NOTE: deriv can be the same pointer as f, then result overwrites input 
+ *              NOTE: deriv can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_derivative_2d_c(int direction, int n, Complex *f, Complex *deriv);
 
 /**
  * Function computes first derivative with respect to x (df/dx)
- * of 2D complex function f(x,y)   
+ * of 2D complex function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param dfdx pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: dfdx can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdx can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdx_2d_c(Complex *f, Complex *dfdx);
 
 /**
  * Function computes first derivative with respect to y (df/dy)
- * of 2D complex function f(x,y)   
+ * of 2D complex function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param dfdy pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: dfdy can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdy can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdy_2d_c(Complex *f, Complex *dfdy);
 
 /**
  * Function computes second derivative with respect to x (d^2f/dx^2)
- * of 2D complex function f(x,y)   
+ * of 2D complex function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param d2fdx2 pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdx2_2d_c(Complex *f, Complex *d2fdx2);
 
 /**
  * Function computes second derivative with respect to y (d^2f/dy^2)
- * of 2D complex function f(x,y)   
+ * of 2D complex function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param d2fdy2 pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: d2fdy2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdy2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdy2_2d_c(Complex *f, Complex *d2fdy2);
 
 /**
  * Function computes n-th derivative with respect to x (d^nf/dx^n)
- * of 2D complex function f(x,y)   
+ * of 2D complex function f(x,y)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param dnfdxn pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdxn_2d_c(int n, Complex *f, Complex *dnfdxn);
 
 /**
  * Function computes n-th derivative with respect to y (d^nf/dy^n)
- * of 2D complex function f(x,y)   
+ * of 2D complex function f(x,y)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param dnfdyn pointer to function, array of size [nx*ny] (OUTPUT)
- *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdyn_2d_c(int n, Complex *f, Complex *dnfdyn);
 
 /**
  * Function computes gradient
- * of 2D complex function f(x,y)   
+ * of 2D complex function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param dfdx pointer to function, array of size [nx*ny] (OUTPUT)
  * @param dfdy pointer to function, array of size [nx*ny] (OUTPUT)
@@ -673,16 +673,16 @@ int wderiv_gradient2_2d_c(Complex *f, Complex *gradient_square);
 
 /**
  * Function computes laplace = d^2f/dx^2 + d^2f/dy^2
- * of 2D complex function f(x,y)   
+ * of 2D complex function f(x,y)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param laplace pointer to function, array of size [nx*ny] (OUTPUT)
  * @return error code
- * */ 
+ * */
 int wderiv_laplace_2d_c(Complex *f, Complex *laplace);
 
 /**
  * Function computes divergence = df/dx + df/dy + df/dz
- * of 2D complex function f(x,y,z)   
+ * of 2D complex function f(x,y,z)
  * @param f pointer to function, array of size [nx*ny] (INPUT)
  * @param divergence pointer to function, array of size [nx*ny] (OUTPUT)
  * @return error code
@@ -690,48 +690,48 @@ int wderiv_laplace_2d_c(Complex *f, Complex *laplace);
 int wderiv_divergence_2d_c(Complex *f, Complex *divergence);
 
 /**
- * Function computes n-th derivative of 1D complex function f(x)   
+ * Function computes n-th derivative of 1D complex function f(x)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param deriv pointer to function, array of size [nx] (OUTPUT)
- *              NOTE: deriv can be the same pointer as f, then result overwrites input 
+ *              NOTE: deriv can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_derivative_1d_c(int n, Complex *f, Complex *deriv);
 
 /**
  * Function computes first derivative with respect to x (df/dx)
- * of 1D complex function f(x)   
+ * of 1D complex function f(x)
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param dfdx pointer to function, array of size [nx] (OUTPUT)
- *                NOTE: dfdx can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdx can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdx_1d_c(Complex *f, Complex *dfdx);
 
 /**
  * Function computes second derivative with respect to x (d^2f/dx^2)
- * of 1D complex function f(x)   
+ * of 1D complex function f(x)
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param d2fdx2 pointer to function, array of size [nx] (OUTPUT)
- *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdx2_1d_c(Complex *f, Complex *d2fdx2);
 
 /**
  * Function computes n-th derivative with respect to x (d^nf/dx^n)
- * of 1D complex function f(x)   
+ * of 1D complex function f(x)
  * @param n order of derivative
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param dnfdxn pointer to function, array of size [nx] (OUTPUT)
- *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdxn_1d_c(int n, Complex *f, Complex *dnfdxn);
 /**
  * Function computes gradient
- * of 1D real function f(x)   
+ * of 1D real function f(x)
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param dfdx pointer to function, array of size [nx] (OUTPUT)
  * @return error code
@@ -749,7 +749,7 @@ int wderiv_gradient2_1d_c(Complex *f, Complex *gradient_square);
 
 /**
  * Function computes laplace = d^2f/dx^2
- * of 1D complex function f(x)   
+ * of 1D complex function f(x)
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param laplace pointer to function, array of size [nx] (OUTPUT)
  * @return error code
@@ -758,7 +758,7 @@ int wderiv_laplace_1d_c(Complex *f, Complex *laplace);
 
 /**
  * Function computes divergence = df/dx
- * of 1D complex function f(x)   
+ * of 1D complex function f(x)
  * @param f pointer to function, array of size [nx] (INPUT)
  * @param divergence pointer to function, array of size [nx] (OUTPUT)
  * @return error code
@@ -773,7 +773,7 @@ int wderiv_divergence_1d_c(Complex *f, Complex *divergence);
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param dfdx pointer to function (OUTPUT)
- *                NOTE: dfdx can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdx can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdx(int datadim, char type, void *f, void *dfdx);
@@ -784,7 +784,7 @@ int wderiv_dfdx(int datadim, char type, void *f, void *dfdx);
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param dfdy pointer to function (OUTPUT)
- *                NOTE: dfdy can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdy can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdy(int datadim, char type, void *f, void *dfdy);
@@ -795,7 +795,7 @@ int wderiv_dfdy(int datadim, char type, void *f, void *dfdy);
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param dfdz pointer to function (OUTPUT)
- *                NOTE: dfdz can be the same pointer as f, then result overwrites input 
+ *                NOTE: dfdz can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dfdz(int datadim, char type, void *f, void *dfdz);
@@ -806,7 +806,7 @@ int wderiv_dfdz(int datadim, char type, void *f, void *dfdz);
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param d2fdx2 pointer to function (OUTPUT)
- *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdx2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdx2(int datadim, char type, void *f, void *d2fdx2);
@@ -817,7 +817,7 @@ int wderiv_d2fdx2(int datadim, char type, void *f, void *d2fdx2);
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param df2dy2 pointer to function (OUTPUT)
- *                NOTE: d2fdy2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdy2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdy2(int datadim, char type, void *f, void *d2fdy2);
@@ -828,7 +828,7 @@ int wderiv_d2fdy2(int datadim, char type, void *f, void *d2fdy2);
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param d2fdz2 pointer to function (OUTPUT)
- *                NOTE: d2fdz2 can be the same pointer as f, then result overwrites input 
+ *                NOTE: d2fdz2 can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_d2fdz2(int datadim, char type, void *f, void *d2fdz2);
@@ -840,7 +840,7 @@ int wderiv_d2fdz2(int datadim, char type, void *f, void *d2fdz2);
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param dnfdxn pointer to function (OUTPUT)
- *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdxn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdxn(int datadim, char type, int n,  void *f, void *dnfdxn);
@@ -852,7 +852,7 @@ int wderiv_dnfdxn(int datadim, char type, int n,  void *f, void *dnfdxn);
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param dnfdyn pointer to function (OUTPUT)
- *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdyn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdyn(int datadim, char type, int n,  void *f, void *dnfdyn);
@@ -863,7 +863,7 @@ int wderiv_dnfdyn(int datadim, char type, int n,  void *f, void *dnfdyn);
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param dnfdzn pointer to function (OUTPUT)
- *                NOTE: dnfdzn can be the same pointer as f, then result overwrites input 
+ *                NOTE: dnfdzn can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_dnfdzn(int datadim, char type, int n,  void *f, void *dnfdzn);
@@ -889,7 +889,7 @@ int wderiv_gradient(int datadim, char type, void *f, void *dfdx, void *dfdy, voi
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param laplace pointer to function (OUTPUT)
- *                NOTE: laplace can be the same pointer as f, then result overwrites input 
+ *                NOTE: laplace can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_laplace(int datadim, char type, void *f, void *laplace);
@@ -900,7 +900,7 @@ int wderiv_laplace(int datadim, char type, void *f, void *laplace);
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param gradient_squared pointer to function (OUTPUT)
- *                NOTE: gradient_squared can be the same pointer as f, then result overwrites input 
+ *                NOTE: gradient_squared can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_gradient2(int datadim, char type, void *f, void *gradient_squared);
@@ -911,7 +911,7 @@ int wderiv_gradient2(int datadim, char type, void *f, void *gradient_squared);
  * @param type r-real function, c-complex function
  * @param f pointer to function (INPUT)
  * @param divergence pointer to function (OUTPUT)
- *                NOTE: divergence can be the same pointer as f, then result overwrites input 
+ *                NOTE: divergence can be the same pointer as f, then result overwrites input
  * @return error code
  * */
 int wderiv_divergence(int datadim, char type, void *f, void *divergence);
